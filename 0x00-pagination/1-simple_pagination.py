@@ -3,6 +3,7 @@
 """
 import csv
 from typing import List, Tuple
+import os
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
@@ -16,7 +17,7 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
 class Server:
     """Server class to paginate a database of popular baby names.
     """
-    DATA_FILE = "Popular_Baby_Names.csv"
+    DATA_FILE = os.path.abspath(os.path.dirname(__file__)) + "/Popular_Baby_Names.csv"
 
     def __init__(self):
         """Initializes a new Server instance.
